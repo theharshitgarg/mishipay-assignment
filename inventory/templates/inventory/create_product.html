@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Products{% endblock %}
+
+{% block css_sheets %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h3>New Product :</h3> 
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-responsive">
+            <thead>
+                <th>Name</th>
+                <th>Cost Per Item</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block js_scripts %}
+  <script type="text/javascript" charset="utf-8" async defer>
+    function populateProducts() {
+    }
+
+    $('#msg-area').hide();
+
+  </script>
+{% endblock %}
