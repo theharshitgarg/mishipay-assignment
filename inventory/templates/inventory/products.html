@@ -12,17 +12,19 @@
             <a class="btn btn-primary" href="#">New Product</a>
         </div>
     </div>
-    {% for product in resp.products %}
-        <div class="row">
-            <div class="panel panel-primary">
-                <div class="panel-heading">{{ product.title }}</div>
-                <div class="panel-body">{{ product.body_html | safe }}</div>
-                <div class="panel-footer">
-                    {{ product.product_type }}
+    <div class="row">
+        {% for product in resp.products %}
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">{{ product.title }}</div>
+                    <div class="panel-body">{{ product.body_html | safe }}</div>
+                    <div class="panel-footer">
+                        {{ product.product_type }}
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}
 
 {% block js_scripts %}
