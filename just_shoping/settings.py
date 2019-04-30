@@ -25,7 +25,7 @@ SECRET_KEY = '3d4b^8ymta1r^ny2m5r68^__15(wen_!$d(if(%*0vgmbu0f9s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'mos-mishipay.herokuapp.com']
 
 
 # Application definition
