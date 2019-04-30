@@ -5,9 +5,10 @@ from django.db import models
 
 # Create your models here.
 
+
 class Vendor(models.Model):
     name = models.CharField(max_length=400)
-    
+
     def __str__(self):
         return self.name
 
@@ -38,7 +39,7 @@ class Product(models.Model):
 
     def __str_(self):
         return self.name
-    
+
     @property
     def json(self):
         return {
@@ -46,4 +47,3 @@ class Product(models.Model):
             "vendor": self.vendor.json,
             "category": self.category.json,
         }
-
