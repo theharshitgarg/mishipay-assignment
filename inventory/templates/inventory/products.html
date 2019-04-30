@@ -6,15 +6,13 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6"><h3>Products List :</h3></div>
-            <div class="col-md-6 text-right">
-                <a class="btn btn-primary" href="#">New Product</a>
-            </div>
+    <div class="row">
+        <div class="col-md-6"><h3>Products List :</h3></div>
+        <div class="col-md-6 text-right">
+            <a class="btn btn-primary" href="#">New Product</a>
         </div>
     </div>
-      {% for product in resp.products %}
+    {% for product in resp.products %}
         <div class="row">
             <div class="panel panel-primary">
                 <div class="panel-heading">{{ product.title }}</div>
@@ -24,7 +22,7 @@
                 </div>
             </div>
         </div>
-      {% endfor %}
+    {% endfor %}
 {% endblock %}
 
 {% block js_scripts %}
