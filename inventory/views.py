@@ -17,6 +17,13 @@ def products(request):
     return render(request, 'inventory/products.html', kwargs)
 
 
+def new_product(request):
+    resp = shopify.get_product_request()
+    resp = json.loads(resp.content.decode('utf-8'))
+
+    kwargs = locals()
+    return render(request, 'inventory/create_product.html', kwargs)
+
 def products_api(request):
     resp = shopify.get_product_request()
     resp = json.loads(resp.content.decode('utf-8'))

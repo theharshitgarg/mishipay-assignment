@@ -4,6 +4,7 @@ from inventory import views
 
 urlpatterns = [
     url(r'^products/list', views.products, name='products_list'),
+    url(r'^products/new', views.new_product, name='new_product'),
     url(r'^orders/new', views.new_order, name='new_order'),
     url(r'^orders/list', views.orders, name='orders_list'),
 
