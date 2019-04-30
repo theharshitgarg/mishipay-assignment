@@ -10,7 +10,8 @@
 3. Show Orders View : Present a list of previous orders in table format
 4. Create Order API : An API to create a order from the website that is visible on the shopify store 
 
-
+# POSTMAN APIs
+https://www.getpostman.com/collections/c2b67d32b5b0186e1866
 
 # Note:
 The normal web view of order creation requires a Javascript Manupilation. It was taking time, so avoided for now.
