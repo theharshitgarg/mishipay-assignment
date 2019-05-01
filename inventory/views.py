@@ -57,7 +57,7 @@ def products_api(request):
 def orders(request):
     resp = shopify.get_orders_request()
     resp = json.loads(resp.content.decode('utf-8'))
-    print(resp)
+
     kwargs = locals()
     return render(request, 'inventory/orders.html', kwargs)
 
