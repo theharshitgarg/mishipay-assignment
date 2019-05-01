@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -69,8 +70,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'just_shoping.wsgi.application'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+
+WSGI_APPLICATION = 'just_shoping.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases

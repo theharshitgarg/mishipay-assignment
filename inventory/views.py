@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.contrib import messages
 from django.shortcuts import render
 from django.http import JsonResponse
 import json
 
 # Create your views here.
 from utils import shopify
+from inventory import forms
+# from inventory.services import create_product as cp
 
 
 def products(request):
@@ -18,11 +21,31 @@ def products(request):
 
 
 def new_product(request):
-    resp = shopify.get_product_request()
-    resp = json.loads(resp.content.decode('utf-8'))
+    product_form = forms.ProductCreationForm()
+
+    if request.method == "POST":
+        product_form = forms.ProductCreationForm(request.POST)
+        if product_form.is_valid():
+            response = product_form.create_product()
+            if response["errors"]:
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    "Error in creating new product.")
+            else:
+                messages.add_message(
+                    request,
+                    messages.SUCCESS,
+                    "Product Created Successfully.")
+        else:
+            messages.add_message(
+                request,
+                messages.ERROR,
+                "Error in creating new product. Please enter valid data.")
 
     kwargs = locals()
     return render(request, 'inventory/create_product.html', kwargs)
+
 
 def products_api(request):
     resp = shopify.get_product_request()

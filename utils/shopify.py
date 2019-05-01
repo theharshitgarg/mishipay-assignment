@@ -33,6 +33,21 @@ def get_product_request():
     return resp
 
 
+def create_product(payload):
+    url = get_uri()
+    url = urljoin(url, ENDPOINTS['PRODUCTS'])
+    headers = {
+        'content-type': "application/json",
+    }
+
+    response = requests.request("POST", url,
+                    data=json.dumps(payload),
+                    headers=headers,
+                )
+
+    return response
+
+
 def get_orders_request():
     url = get_uri()
     url = urljoin(url, ENDPOINTS['ORDERS'])
